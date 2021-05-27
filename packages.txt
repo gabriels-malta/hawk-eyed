@@ -1,0 +1,8 @@
+dotnet new console -f netcoreapp3.1 -n ScrapingNews.Listener -o ./src/ScrapingNews.Listener
+dotnet add ./src/ScrapingNews.Listener/ScrapingNews.Listener.csproj package HtmlAgilityPack --version 1.11.33
+dotnet add ./src/ScrapingNews.Listener/ScrapingNews.Listener.csproj package Microsoft.Extensions.Configuration --version 3.1.15
+dotnet add ./src/ScrapingNews.Listener/ScrapingNews.Listener.csproj package Microsoft.Extensions.Configuration.Json --version 3.1.15
+dotnet add ./src/ScrapingNews.Listener/ScrapingNews.Listener.csproj package Microsoft.Extensions.Configuration.Binder --version 3.1.15
+New-Item ./src/ScrapingNews.Listener/body-template.html
+New-Item ./src/ScrapingNews.Listener/appsettings.json
+((Get-Content -Path ./src/ScrapingNews.Listener/ScrapingNews.Listener.csproj -Raw) -replace '</Project>','<ItemGroup><Content Include="appsettings.json" CopyToOutputDirectory="Always" /><Content Include="body-template.html" CopyToOutputDirectory="Always" /></ItemGroup></Project>') | Set-Content -Path ./src/ScrapingNews.Listener/ScrapingNews.Listener.csproj
