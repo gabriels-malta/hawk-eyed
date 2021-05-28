@@ -10,3 +10,5 @@ O sistema deve:
 O software foi desenvolvido em C# e .net core 3.1
 
 A biblioteca [Html Agility Pack](https://html-agility-pack.net/) foi utilizada para filtrar objetos DOM e recuperar os valores necessários.
+
+O arquivo [packages.txt](https://github.com/gabriels-malta/hawk-eyed/blob/main/packages.txt) possui todos os comandos necessários para a criação da estrutura deste projeto.
